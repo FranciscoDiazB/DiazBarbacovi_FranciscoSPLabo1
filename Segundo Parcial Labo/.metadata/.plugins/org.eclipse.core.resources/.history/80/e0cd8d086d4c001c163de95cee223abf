@@ -1,0 +1,235 @@
+/*
+ ============================================================================
+ Name        : SegundoParcialLabo.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "controller.h"
+
+int menu();
+
+int main()
+{
+	setbuf(stdout, NULL);
+
+	char respuesta = 'n';
+	int flagDatos = 0;
+	int flagMap = 0;
+	int flagArchivoMapeado = 0;
+	int opcionText;
+
+    LinkedList* listaLibros = ll_newLinkedList();
+    LinkedList* listaFiltradaMayor500;
+    LinkedList* listaFiltradaMenor500;
+
+    do {
+
+    	switch(menu()){
+
+    	case 1:
+    		if(flagDatos == 0){
+
+    			if(controller_leerArchivoTexto("Datos.csv", listaLibros) != 0){
+
+    				printf("Los datos del archivo fueron cargados en el sistema");
+    				flagDatos = 1;
+    			}
+    		}
+    		else if(flagDatos == 1 || flagMap == 1){
+
+    			printf("\nLos datos que esten en la lista se van a sobreescribir. Desea continuar?\n\n");
+    			printf("1. SI, DESEO CONTINUAR.\n");
+    			printf("2. NO, PREFIERO VOLVER AL MENU.\n\n");
+    			printf("Ingrese la opcion: ");
+    			scanf("%d", &opcionText);
+    			while(opcionText != 1 && opcionText != 2){
+    				printf("Opcion invalida. Ingrese la opcion: ");
+    				fflush(stdin);
+    				scanf("%d", &opcionText);
+    			}
+    			if(opcionText == 1){
+
+    				ll_clear(listaLibros);
+    				if(controller_leerArchivoTexto("Datos.csv", listaLibros) != 0){
+    					printf("\nLos datos del archivo cargados en la Lista, y los datos previos fueron sobreescritos.");
+    					flagDatos = 1;
+    					flagMap = 0;
+    				}
+    			}
+    			else{
+    				printf("\n\nAhora vuelve al menu.");
+    			}
+    		}
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 2:
+    		if(flagDatos == 1){
+
+				if(controller_ordenarListaLibros(listaLibros)){
+
+					printf("\n\nLista ordenada");
+				}
+    		}
+    		else{
+    			printf("\nAntes de poder ordenar la lista, debe cargar la lista con datos desde el archivo");
+    		}
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 3:
+    		if(flagDatos == 1){
+
+    			controller_mostrarListaLibros(listaLibros);
+    		}
+    		else{
+    			printf("\nAntes de poder ordenar la lista, debe cargar la lista con datos desde el archivo");
+    		}
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 4:
+    		if(flagDatos == 1){
+
+    			listaLibros = ll_map(listaLibros, libro_AplicarDescuentos);
+
+    			if(listaLibros != NULL){
+
+    				printf("\nDescuentos correspondientes aplicados");
+    				flagMap = 1;
+    			}
+    		}
+
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 5:
+    		if(flagDatos == 0 && flagMap == 0){
+
+    			printf("\nPrimero se deben cargar los datos desde el archivo al sistema,\ny luego hay que aplicarles el descuento correspondiente");
+    		}
+    		else if(flagDatos == 1 && flagMap == 0){
+
+    			printf("\nLos datos del archivo ya estan cargados en el sistema,\npero para acceder a esta opcion tiene que aplicarle el descuento correspondiete");
+    		}
+    		else if(flagDatos == 1 && flagMap == 1){
+
+    			if(controller_guardarComoTexto("mapeado.csv", listaLibros) != 0){
+    				printf("\nArchivo 'mapeado.csv' creado y cargado");
+    				flagArchivoMapeado = 1;
+    			}
+    		}
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 6:
+    		if(flagDatos == 1 && flagMap == 0){
+
+    			listaFiltradaMenor500 = ll_filter(listaLibros, libro_FiltrarPrecioMenor500);
+
+    			if(listaFiltradaMenor500 != NULL){
+
+    				controller_mostrarListaLibros(listaFiltradaMenor500);
+    				printf("\n");
+    				if(controller_guardarComoTexto("listaMenos500.csv", listaFiltradaMenor500) != 0){
+
+    					printf("\nArchivo 'listaMenos500.csv' creado y cargado");
+    				}
+    			}
+    		}
+    		else if(flagDatos == 1 && flagMap == 1){
+
+    			printf("\nNo se puede realizar un filtrado de la lista con descuentos ya aplicados.\nSi quiere realizar el filtrado tiene que volver a cargar el archivo 'Datos.csv'.")
+    		}
+    		else{
+    			printf("\nPrimero se deben cargar los datos del archivo 'Datos.csv' en el sistema, antes de realizar el filtrado.");
+    		}
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 7:
+    		if(flagDatos == 1 && flagMap == 0){
+
+    			listaFiltradaMayor500 = ll_filter(listaLibros, libro_FiltrarPrecioMayor500);
+
+    			if(listaFiltradaMayor500 != NULL){
+
+    				controller_mostrarListaLibros(listaFiltradaMayor500);
+    				printf("\n");
+    				if(controller_guardarComoTexto("listaMasIgual500.csv", listaFiltradaMayor500) != 0){
+
+    					printf("\nArchivo 'listaMasIgual500.csv' creado y cargado");
+    				}
+    			}
+    		}
+    		else if(flagDatos == 1 && flagMap == 1){
+
+    		}
+    		else{
+    			printf("\nPrimero se deben cargar los datos del archivo 'Datos.csv' en el sistema, antes de realizar el filtrado");
+    		}
+
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	case 8:
+    		printf("\nEsta seguro que desea salir? Oprima la tecla 's' desea salir\n");
+    		printf("De lo contrario oprima la tecla 'n' (minuscula)\n");
+    		fflush(stdin);
+    		respuesta = getchar();
+    		printf("\n\n");
+    		system("pause");
+    		break;
+
+    	default:
+    		printf("\n");
+    		printf("Dato invalido. Reingrese numero\n");
+    		system("pause");
+
+    	}
+
+    } while(respuesta == 'n');
+
+    ll_deleteLinkedList(listaLibros);
+    ll_deleteLinkedList(listaFiltradaMayor500);
+    ll_deleteLinkedList(listaFiltradaMenor500);
+
+    return 0;
+}
+
+int menu(){
+
+	int opcion;
+
+	printf("\n");
+	printf("\t\t**** Menu Libros ****");
+	printf("\n\n");
+	printf("1. Cargar los datos de los libros desde el archivo 'Datos.csv'\n");
+	printf("2. Ordenar la lista de libros (orden ascendente)\n");
+	printf("3. Imprimir la lista de libros\n");
+	printf("4. Realizar los descuentos correspondientes\n");
+	printf("5. Generar y guardar los datos en el archivo 'mapeado.csv'\n");
+	printf("6. Filtrar la Lista con precios menores a $500, creando un archivo de salida 'listaMenos500.csv'\n");
+	printf("7. Filtrar la Lista con precios mayores o iguales a $500, creando un archivo de salida 'listaMasIgual500.csv'\n");
+	printf("8. Salir\n\n\n");
+
+	printf("Ingrese la opcion correspondiente: ");
+	fflush(stdin);
+	scanf("%d", &opcion);
+
+	return opcion;
+
+}

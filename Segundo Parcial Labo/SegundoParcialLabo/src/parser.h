@@ -1,0 +1,19 @@
+/*
+ * parser.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include "libro.h"
+#include "linkedlist.h"
+
+#ifndef PARSER_H_
+#define PARSER_H_
+
+int parser_LibrosdeArchivoTexto(FILE* pFile , LinkedList* pListaLibros);
+
+int escritura_ArchivoTexto(FILE* pFile , LinkedList* pListaLibros);
+
+
+#endif /* PARSER_H_ */

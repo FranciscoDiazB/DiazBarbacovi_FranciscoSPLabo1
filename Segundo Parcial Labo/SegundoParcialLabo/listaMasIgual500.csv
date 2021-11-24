@@ -1,0 +1,17 @@
+id,titulo,autor,precio,editorial
+3,Como programar en Java,Deitel & Deitel,1000.00,Pearson
+4,El señor de los anillos - La comunidad del anillo,Tolkien,800.00,Minotauro
+5,Harry Potter Y La Piedra Filosofal,Rowling,800.00,SALAMANDRA
+7,La voz del gran jefe,Pigna,500.00,Planeta
+9,Como programar en C++,Deitel & Deitel,1000.00,Pearson
+10,El señor de los anillos - Las dos torres,Tolkien,800.00,Minotauro
+11,Harry Potter y la camara secreta,Rowling,800.00,SALAMANDRA
+15,El señor de los anillos - El retorno del rey,Tolkien,800.00,Minotauro
+16,Harry Potter y el prisionero de Azkaban,Rowling,800.00,SALAMANDRA
+18,Libertadores de America,Pigna,500.00,Planeta
+20,El hobbit,Tolkien,800.00,Minotauro
+21,Harry Potter y el cáliz de fuego,Rowling,800.00,SALAMANDRA
+23,Los mitos de la historia argentina 1,Pigna,500.00,Planeta
+24,Harry Potter y la Orden del Fenix,Rowling,800.00,SALAMANDRA
+26,Harry Potter y el misterio del principe,Rowling,800.00,SALAMANDRA
+28,Harry Potter y las Reliquias de la Muerte,Rowling,800.00,SALAMANDRA

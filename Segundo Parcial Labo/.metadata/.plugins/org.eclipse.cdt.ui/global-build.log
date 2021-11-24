@@ -1,0 +1,520 @@
+18:13:36 **** Rebuild of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\linkedlist.o" "..\\src\\linkedlist.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:31:18 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:32:7: warning: implicit declaration of function 'controller_leerArchivoTexto' [-Wimplicit-function-declaration]
+       controller_leerArchivoTexto("Datos.csv", listaLibros);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+In file included from ..\src\parser.h:8:0,
+                 from ..\src\parser.c:10:
+..\src\libro.h:46:26: error: unknown type name 'LinkedList'
+ int libro_mostrarUnLibro(LinkedList* list, int indice);
+                          ^~~~~~~~~~
+19:32:14 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+..\src\libro.c: In function 'new_LibroParametros':
+..\src\libro.c:34:9: warning: implicit declaration of function 'employee_new' [-Wimplicit-function-declaration]
+  this = employee_new();
+         ^~~~~~~~~~~~
+..\src\libro.c:34:7: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  this = employee_new();
+       ^
+..\src\libro.c: In function 'new_LibroParametrosString':
+..\src\libro.c:57:7: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  this = employee_new();
+       ^
+..\src\libro.c: In function 'libro_setAutor':
+..\src\libro.c:154:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if(strlen(autor) < TAM_AUTOR)
+   ^~
+..\src\libro.c:157:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    retorno = 1;
+    ^~~~~~~
+..\src\libro.c: In function 'libro_setEditorial':
+..\src\libro.c:226:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if(strlen(editorial) < TAM_EDITORIAL)
+   ^~
+..\src\libro.c:229:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    retorno = 1;
+    ^~~~~~~
+..\src\libro.c: In function 'libro_OrdenarAutor':
+..\src\libro.c:286:2: warning: implicit declaration of function 'employee_getNombre' [-Wimplicit-function-declaration]
+  employee_getNombre((eLibros*) thisA, editA);
+  ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+src\libro.o: In function `new_LibroParametros':
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:34: undefined reference to `employee_new'
+src\libro.o: In function `new_LibroParametrosString':
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:57: undefined reference to `employee_new'
+src\libro.o: In function `libro_OrdenarAutor':
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:286: undefined reference to `employee_getNombre'
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:287: undefined reference to `employee_getNombre'
+collect2.exe: error: ld returned 1 exit status
+19:32:51 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+..\src\libro.c: In function 'libro_setAutor':
+..\src\libro.c:154:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if(strlen(autor) < TAM_AUTOR)
+   ^~
+..\src\libro.c:157:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    retorno = 1;
+    ^~~~~~~
+..\src\libro.c: In function 'libro_setEditorial':
+..\src\libro.c:226:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if(strlen(editorial) < TAM_EDITORIAL)
+   ^~
+..\src\libro.c:229:4: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+    retorno = 1;
+    ^~~~~~~
+..\src\libro.c: In function 'libro_OrdenarAutor':
+..\src\libro.c:286:2: warning: implicit declaration of function 'employee_getNombre' [-Wimplicit-function-declaration]
+  employee_getNombre((eLibros*) thisA, editA);
+  ^~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+src\libro.o: In function `libro_OrdenarAutor':
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:286: undefined reference to `employee_getNombre'
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/libro.c:287: undefined reference to `employee_getNombre'
+collect2.exe: error: ld returned 1 exit status
+19:34:03 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:34:44 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:32:7: warning: implicit declaration of function 'controller_leerArchivoTexto' [-Wimplicit-function-declaration]
+       controller_leerArchivoTexto("Datos.csv", listaLibros);
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:35:06 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:39:53 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_mostrarListaLibros':
+..\src\controller.c:39:6: warning: unused variable 'tam' [-Wunused-variable]
+  int tam;
+      ^~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:36:10: warning: implicit declaration of function 'controller_leerArchivoTexto' [-Wimplicit-function-declaration]
+       if(controller_leerArchivoTexto("Datos.csv", listaLibros) != 0){
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\SegundoParcialLabo.c:58:8: error: 'controller_' undeclared (first use in this function)
+        controller_
+        ^~~~~~~~~~~
+..\src\SegundoParcialLabo.c:58:8: note: each undeclared identifier is reported only once for each function it appears in
+..\src\SegundoParcialLabo.c:60:7: error: expected ';' before '}' token
+       }
+       ^
+19:40:52 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+src\controller.o: In function `controller_mostrarListaLibros':
+D:\Segundo Parcial Labo\SegundoParcialLabo\Debug/../src/controller.c:47: undefined reference to `libro_mostrarUnLibro'
+collect2.exe: error: ld returned 1 exit status
+19:46:41 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:48:42 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:49:33 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:50:14 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:50:51 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:51:53 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:52:36 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:53:03 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:53:34 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:54:05 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:54:40 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:55:23 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:55:54 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+19:56:42 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file SegundoParcialLabo.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:56:46 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:57:16 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:57:42 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:58:01 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:58:37 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:59:00 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+19:59:23 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+19:59:49 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:00:08 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:01:02 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:01:23 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:01:43 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:02:03 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:02:38 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:03:04 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:03:29 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:04:03 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:04:26 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:05:00 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:05:17 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:05:49 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:06:16 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:07:18 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:07:30 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:08:23 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:08:46 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+20:15:27 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:09:30 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:74:41: error: 'libro_AplicarDescuentos' undeclared (first use in this function)
+       listaLibros = ll_map(listaLibros, libro_AplicarDescuentos);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\SegundoParcialLabo.c:74:41: note: each undeclared identifier is reported only once for each function it appears in
+..\src\SegundoParcialLabo.c:22:6: warning: unused variable 'len' [-Wunused-variable]
+  int len;
+      ^~~
+21:09:57 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:12:07 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:12:44 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:14:15 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+21:14:35 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:21:07 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:22:22 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+21:23:52 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+22:22:36 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+22:25:20 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+22:25:36 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+22:35:29 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+10:46:54 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+..\src\libro.c: In function 'libro_OrdenarPrecio':
+..\src\libro.c:308:6: warning: unused variable 'exito' [-Wunused-variable]
+  int exito = 0;
+      ^~~~~
+..\src\libro.c:314:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+11:03:27 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+11:44:37 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+11:45:02 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+..\src\SegundoParcialLabo.c: In function 'main':
+..\src\SegundoParcialLabo.c:24:6: warning: variable 'flagArchivoMapeado' set but not used [-Wunused-but-set-variable]
+  int flagArchivoMapeado = 0;
+      ^~~~~~~~~~~~~~~~~~
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+11:54:23 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+12:09:28 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+12:11:47 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+12:16:57 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+12:29:13 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+18:47:05 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+Info: Nothing to build for SegundoParcialLabo
+10:24:37 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SegundoParcialLabo.o" "..\\src\\SegundoParcialLabo.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+11:35:03 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\linkedlist.o" "..\\src\\linkedlist.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+11:35:54 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\linkedlist.o" "..\\src\\linkedlist.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+11:48:45 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\linkedlist.o" "..\\src\\linkedlist.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+12:19:18 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\libro.o" "..\\src\\libro.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\linkedlist.o" "..\\src\\linkedlist.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo
+12:34:55 **** Incremental Build of configuration Debug for project SegundoParcialLabo ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o SegundoParcialLabo.exe "src\\SegundoParcialLabo.o" "src\\controller.o" "src\\libro.o" "src\\linkedlist.o" "src\\parser.o" 
+Info: Nothing to build for SegundoParcialLabo

@@ -1,0 +1,54 @@
+/*
+ * libro.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#define TAM_TITULO 128
+#define TAM_AUTOR 50
+
+#ifndef LIBRO_H_
+#define LIBRO_H_
+
+typedef struct{
+
+	int id;
+	char titulo[TAM_TITULO];
+	char autor[TAM_AUTOR];
+	float precio;
+
+
+}eLibros;
+
+eLibros* new_Libro();
+eLibros* new_LibroParametros(int id, char* titulo, char* autor, float precio);
+eLibros* new_LibroParametrosString(char* idStr,char* tituloStr,char* autorStr, char* precioStr);
+
+int libro_setId(Employee* this,int id);
+int libro_getId(Employee* this,int* id);
+int libro_setIdStr(Employee* this, char* id);
+
+int libro_setTitulo(Employee* this,char* nombre);
+int libro_getTitulo(Employee* this,char* nombre);
+
+int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas);
+int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
+int employee_setHorasTrabajadasStr(Employee* this, char* horasTrabajadas);
+
+int employee_setSueldo(Employee* this,int sueldo);
+int employee_getSueldo(Employee* this,int* sueldo);
+int employee_setSueldoStr(Employee* this, char* sueldo);
+
+int employee_showAnEmployee(LinkedList* list, int indice);
+int employee_finder(int idEmployee, LinkedList* list);
+
+int employee_SortbySalary(void* thisA, void* thisB);
+int employee_SortbyHours(void* thisA, void* thisB);
+int employee_SortbyName(void* thisA, void* thisB);
+int employee_SortbyID(void* thisA, void* thisB);
+
+void employee_IncreaseSalary(void* this);
+int employee_Filter200PlusHours(void* this);
+
+#endif /* LIBRO_H_ */

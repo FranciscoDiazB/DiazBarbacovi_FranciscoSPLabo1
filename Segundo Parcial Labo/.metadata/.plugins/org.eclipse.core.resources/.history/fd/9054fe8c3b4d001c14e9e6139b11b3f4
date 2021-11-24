@@ -1,0 +1,151 @@
+/*
+ * controller.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+
+
+/** \brief Abre el archivo, valida que no sea NULL, llama al parser y cierra el archivo.
+ *
+ * \param pList LinkedList* Puntero a la lista.
+ * \param from char* path path del archivo que se va a leer.
+ * \return int Retorna 0 : si el path o la lista son NULL
+ * 					   1 : si tuvo exito.
+*/
+int controller_leerArchivoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "r");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo leer el archivo\n");
+	}
+	else{
+		printf("\nSe pudo leer el archivo\n");
+		if(parser_LibrosdeArchivoTexto(pArchivo, pListaLibros)!= 0){
+
+			exito = 1;
+		}
+		fclose(pArchivo);
+	}
+
+    return exito;
+}
+
+/** \brief Muestra los elementos de la lista.
+ *
+ * \param pList LinkedList* Puntero a la lista.
+ * \return int Retorna 0 : si la lista son NULL
+ * 					   1 : si tuvo exito.
+*/
+int controller_mostrarListaLibros(LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	if(pListaLibros != NULL){
+
+		printf("\nID\t\t\t\tTITULO\t\t\t\t\tAUTOR\t\t\tPRECIO\t\t\tEDITORIAL\n");
+		printf("----------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
+		for(int i = 0; i < ll_len(pListaLibros); i++){
+
+			libro_mostrarUnLibro(pListaLibros, i);
+
+			exito = 1;
+
+		}
+	}
+	return exito;
+}
+
+/** \brief Muestra los elementos de la lista.
+ *
+ * \param pList LinkedList* Puntero a la lista.
+ * \return int Retorna 0 : si la lista son NULL
+ * 					   1 : si tuvo exito.
+*/
+int controller_ordenarListaLibros(LinkedList* pListaLibros)
+{
+	int exito = 0;
+	int opcionModificar;
+
+	if(pListaLibros != NULL){
+
+		printf("\n\t\t\tOrdenar Empleados\n");
+
+		printf("\n1. Ordenar por Autor (Ascendente)\n");
+		printf("2. Ordenar por Precio (Ascendente)\n");
+		printf("3. Ordenar por Titulo (Ascendente)\n");
+		printf("\nIngrese el numero correspondiente a la opcion que quiera: ");
+		fflush(stdin);
+		scanf("%d", &opcionModificar);
+
+		switch(opcionModificar){
+
+		case 1:
+
+			printf("\nOrdenando, agurde un momento...");
+			if(ll_sort(pListaLibros, libro_OrdenarAutor, 1) != -1){
+
+				exito = 1;
+			}
+			break;
+
+		case 2:
+
+			printf("\nOrdenando, agurde un momento...");
+			if(ll_sort(pListaLibros, libro_OrdenarPrecio, 1) != -1){
+
+				exito = 1;
+			}
+			break;
+
+		case 3:
+
+			printf("\nOrdenando, agurde un momento...");
+			if(ll_sort(pListaLibros, libro_OrdenarTitulo, 1) != -1){
+
+				exito = 1;
+			}
+			break;
+
+		default:
+			printf("Dato invalido");
+			exito = 1;
+			break;
+		}
+	}
+	return exito;
+}
+
+int controller_guardarComoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "w");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo crear el archivo\n");
+	}
+	else{
+
+		if(escritura_ArchivoTexto(pArchivo, pListaLibros) != 0){
+			printf("\nSe pudieron escribir los datos en el archivo de texto");
+		}
+		fclose(pArchivo);
+		exito = 1;
+	}
+	return exito;
+}

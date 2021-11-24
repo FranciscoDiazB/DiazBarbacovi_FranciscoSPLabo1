@@ -1,0 +1,21 @@
+/*
+ * controller.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include "parser.h"
+
+#ifndef CONTROLLER_H_
+#define CONTROLLER_H_
+
+int controller_leerArchivoTexto(char* path , LinkedList* pListaLibros);
+
+int controller_mostrarListaLibros(LinkedList* pListaLibros);
+
+int controller_ordenarListaLibros(LinkedList* pListaLibros);
+
+int controller_guardarComoTexto(char* path , LinkedList* pListaLibros);
+
+#endif /* CONTROLLER_H_ */

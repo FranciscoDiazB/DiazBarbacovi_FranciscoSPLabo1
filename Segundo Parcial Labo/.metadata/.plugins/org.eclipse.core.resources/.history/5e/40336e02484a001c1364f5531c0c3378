@@ -1,0 +1,28 @@
+/*
+ * libro.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#define TAM_TITULO 128
+#define TAM_AUTOR 50
+
+#ifndef LIBRO_H_
+#define LIBRO_H_
+
+typedef struct{
+
+	int id;
+	char titulo[TAM_TITULO];
+	char autor[TAM_AUTOR];
+	float precio;
+
+
+}eLibros;
+
+eLibros* new_Libro();
+eLibros* new_LibroParametros(int id, char* titulo, char* autor, float precio);
+eLibros* new_LibroParametrosString(char* idStr,char* tituloStr,char* autorStr, char* precioStr);
+
+#endif /* LIBRO_H_ */

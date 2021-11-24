@@ -1,0 +1,75 @@
+/*
+ * parser.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "parser.h"
+
+
+int parser_LibrosdeArchivoTexto(FILE* pFile , LinkedList* pListaLibros)
+{
+	char id[150];
+	char titulo[150];
+	char autor[150];
+	char precio[150];
+	char editorial[150];
+	eLibros* nuevoLibro;
+	int cant;
+	int exito = 0;
+
+	if(pFile != NULL && pListaLibros != NULL)
+	{
+
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", id, titulo, autor, precio, editorial);
+
+		while(!feof(pFile))
+		{
+			cant = fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", id, titulo, autor, precio, editorial);
+
+			if( cant < 5){
+				break;
+			}
+
+			nuevoLibro = new_LibroParametrosString(id, titulo, autor, precio, editorial);
+			ll_add(pListaLibros, nuevoLibro);
+
+			if(nuevoLibro != NULL){
+
+				exito = 1;
+			}
+		}
+	}
+	return exito;
+}
+
+int escritura_ArchivoTexto(FILE* pFile , LinkedList* pListaLibros){
+
+	eLibros* auxLibro = NULL;
+	int exito = 0;
+	int idLibro;
+	char titulo[TAM_TITULO];
+	char ;
+	int sueldo;
+
+	if(pFile != NULL && pArrayListEmployee != NULL){
+
+		fprintf(pFile, "id,nombre,horasTrabajadas,sueldo\n");
+
+		for(int i = 0; i < ll_len(pArrayListEmployee); i++){
+
+			auxEmpleado = (Employee*) ll_get(pArrayListEmployee, i);
+			employee_getId(auxEmpleado, &idEmployee);
+			employee_getNombre(auxEmpleado, nombre);
+			employee_getHorasTrabajadas(auxEmpleado, &horasTrabajo);
+			employee_getSueldo(auxEmpleado, &sueldo);
+
+			fprintf(pFile, "%d,%s,%d,%d\n", idEmployee, nombre, horasTrabajo, sueldo);
+		}
+		exito = 1;
+	}
+	return exito;
+}

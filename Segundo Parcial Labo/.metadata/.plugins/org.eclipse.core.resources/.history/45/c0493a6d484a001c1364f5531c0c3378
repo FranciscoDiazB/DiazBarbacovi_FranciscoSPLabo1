@@ -1,0 +1,50 @@
+/*
+ * libro.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#define TAM_TITULO 128
+#define TAM_AUTOR 50
+
+#ifndef LIBRO_H_
+#define LIBRO_H_
+
+typedef struct{
+
+	int id;
+	char titulo[TAM_TITULO];
+	char autor[TAM_AUTOR];
+	float precio;
+
+
+}eLibros;
+
+eLibros* new_Libro();
+eLibros* new_LibroParametros(int id, char* titulo, char* autor, float precio);
+eLibros* new_LibroParametrosString(char* idStr,char* tituloStr,char* autorStr, char* precioStr);
+
+int libro_setId(eLibros* this,int id);
+int libro_getId(eLibros* this,int* id);
+int libro_setIdStr(eLibros* this, char* id);
+
+int libro_setTitulo(eLibros* this,char* nombre);
+int libro_getTitulo(eLibros* this,char* nombre);
+
+int libro_setAutor(eLibros* this,int horasTrabajadas);
+int libro_getAutor(eLibros* this,int* horasTrabajadas);
+
+int libro_setPrecio(eLibros* this,int sueldo);
+int libro_getPrecio(eLibros* this,int* sueldo);
+int libro_setPrecioStr(eLibros* this, char* sueldo);
+
+int libro_mostrarUnLibro(LinkedList* list, int indice);
+int employee_finder(int idEmployee, LinkedList* list);
+
+int libro_OrdenarAutor(void* thisA, void* thisB);
+
+void employee_IncreaseSalary(void* this);
+int employee_Filter200PlusHours(void* this);
+
+#endif /* LIBRO_H_ */

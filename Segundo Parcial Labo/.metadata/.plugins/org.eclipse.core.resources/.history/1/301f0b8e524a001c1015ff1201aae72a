@@ -1,0 +1,35 @@
+/*
+ * controller.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+
+int controller_leerArchivoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "r");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo leer el archivo\n");
+	}
+	else{
+		printf("\nSe pudo leer el archivo\n");
+		if(parser_LibrosdeArchivoTexto(pArchivo, pListaLibros)!= 0){
+
+			exito = 1;
+		}
+		fclose(pArchivo);
+	}
+
+    return exito;
+}

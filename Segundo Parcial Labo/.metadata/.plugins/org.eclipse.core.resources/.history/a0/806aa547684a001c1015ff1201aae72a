@@ -1,0 +1,95 @@
+/*
+ * controller.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+
+int controller_leerArchivoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "r");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo leer el archivo\n");
+	}
+	else{
+		printf("\nSe pudo leer el archivo\n");
+		if(parser_LibrosdeArchivoTexto(pArchivo, pListaLibros)!= 0){
+
+			exito = 1;
+		}
+		fclose(pArchivo);
+	}
+
+    return exito;
+}
+
+int controller_mostrarListaLibros(LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	if(pListaLibros != NULL){
+
+		printf("\nID\t\t\t\tTITULO\t\t\t\t\tAUTOR\t\t\tPRECIO\t\t\tEDITORIAL\n");
+		printf("----------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
+		for(int i = 0; i < ll_len(pListaLibros); i++){
+
+			libro_mostrarUnLibro(pListaLibros, i);
+
+			exito = 1;
+
+		}
+	}
+	return exito;
+}
+
+int controller_ordenarListaLibrosAutor(LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	if(pListaLibros != NULL){
+
+		printf("\n\t\t\tOrdenar Libros\n");
+		printf("\nComenzando a ordenarse...");
+
+		if(ll_sort(pListaLibros, libro_OrdenarAutor, 1) != -1){
+
+			exito = 1;
+		}
+
+	}
+	return exito;
+}
+
+int controller_guardarComoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "w");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo crear el archivo\n");
+	}
+	else{
+
+		if(parser_writeToText(pArchivo, pListaLibros) != 0){
+			printf("\nSe pudieron escribir los datos en el archivo de texto");
+		}
+		fclose(pArchivo);
+		exito = 1;
+	}
+	return exito;
+}

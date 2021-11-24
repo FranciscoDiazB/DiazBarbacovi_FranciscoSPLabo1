@@ -1,0 +1,53 @@
+/*
+ * controller.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "controller.h"
+
+int controller_leerArchivoTexto(char* path , LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	FILE* pArchivo;
+
+	pArchivo = fopen(path, "r");
+
+	if(pArchivo == NULL){
+
+		printf("\nNo se pudo leer el archivo\n");
+	}
+	else{
+		printf("\nSe pudo leer el archivo\n");
+		if(parser_LibrosdeArchivoTexto(pArchivo, pListaLibros)!= 0){
+
+			exito = 1;
+		}
+		fclose(pArchivo);
+	}
+
+    return exito;
+}
+
+int controller_mostrarListaLibros(LinkedList* pListaLibros)
+{
+	int exito = 0;
+
+	if(pListaLibros != NULL){
+
+		printf("\nID\t\tNOMBRE\t\t\tHORAS\t\tSUELDO\n");
+		printf("----------------------------------------------------------------\n\n");
+		for(int i = 0; i < ll_len(pListaLibros); i++){
+
+			libro_mostrarUnLibro(pListaLibros, i);
+			exito = 1;
+
+		}
+	}
+	return exito;
+}

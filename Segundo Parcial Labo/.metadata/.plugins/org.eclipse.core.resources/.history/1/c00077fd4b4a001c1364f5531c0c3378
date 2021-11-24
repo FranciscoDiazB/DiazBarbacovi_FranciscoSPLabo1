@@ -1,0 +1,43 @@
+/*
+ * parser.c
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Asus
+ */
+
+int parser_LibrosArchivoTexto(FILE* pFile , LinkedList* pArrayListEmployee)
+{
+	char buffer[4][20];
+	Employee* nuevoEmpleado;
+	int cant;
+	int exito = 0;
+	//int cont = 0;
+
+	if(pFile != NULL && pArrayListEmployee != NULL)
+	{
+
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
+
+		while(!feof(pFile))
+		{
+			cant = fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
+
+			if( cant < 4){
+				break;
+			}
+
+			nuevoEmpleado = employee_newParametrosString(buffer[0], buffer[1], buffer[2], buffer[3]);
+			ll_add(pArrayListEmployee, nuevoEmpleado);
+			/*if(cont == 10){
+				break;
+			}				Este comentario esta por si quiere limitar la cantidad de datos en el sistema. En vez de ingresar 1000 datos, va a ingresar 11.
+			cont++;*/
+
+			if(nuevoEmpleado != NULL){
+
+				exito = 1;
+			}
+		}
+	}
+	return exito;
+}
